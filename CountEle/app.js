@@ -1,16 +1,17 @@
-const countEle = (arr)=>{
+const countEle = (str)=>{
     let obj = {};
-
-    for(let i = 0; i<arr.length; i++){
-        for(let j = i+1; j<arr.length; j++){
-            if(arr[i] === arr[j]) {
-                obj[i] = arr[i+1];
-            }
+    str.forEach((elem)=>{
+        if(obj.hasOwnProperty(elem)){
+            obj[elem]++;
         }
-    }
+        else{
+            obj[elem] = 1;
+        }
 
+    })
+    
     console.log(obj);
 
 }
 
-countEle([1,2,1,3,4,2,1,3]);
+countEle([1,2,3,1,3,5,2,3]);
